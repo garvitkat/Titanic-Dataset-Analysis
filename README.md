@@ -1,6 +1,30 @@
 # Titanic-Dataset-Analysis
 A data-based approach to uncover what sorts of people were more likely to survive in one of the most infamous shipwrecks.
 Read detailed blog [here](https://medium.com/@garvitkataria/would-you-have-survived-on-sinking-titanic-e534d4acef33).
+## CRISP-DM approach
+#### Business Understanding
+We will be trying to answer the following questions - 
+1. Were the rich given priority while assigning lifeboats?
+2. Were women evacuated first?
+3. How did family size impact the chance of survival?
+4. How important were boarding point and cabin location?
+#### Data Understanding
+1. The dataset has information on 1309 passengers who boarded the ship. It comprises 12 attributes of passenger information like name, age, gender, socio-economic class.
+2. Roughly 20 percent of the Age data is missing. The proportion of Age missing is likely small enough for reasonable replacement with some form of imputation. Looking at the Cabin column, it looks like we are just missing too much of that data to do something useful with at a basic level. We'll probably drop this later, or change it to another feature like "Cabin Known: 1 or 0"
+3. Sex and Embarked are categorical features which we'll need to convert to dummy variables using pandas! Otherwise our machine learning algorithm won't be able to directly take in those features as inputs.
+#### Prepare Data
+1. Imputed passenger age according to average age in Passenger class as wealthier passengers in the higher classes were found to be older.
+2. Handled the categorical variables like Sex and Embarked
+3. Extracted cabin distribution and level of cabin from 20% of available fields.
+#### Data Modeling
+Used logistic regression to for prediction and got 81% accuracy.
+#### Evaluate the Results
+Conclusions made after exploring the Titanic dataset
+1. Women and children were given priority during the evacuation process and had much higher chances of surviving.
+2. The wealthy first-class people had a good chance to survive irrespective of their boarding location.
+3. Midsize families had a higher chance of surviving than lone individuals and large families.
+4. Finally, we looked into the location of rooms in the Titanic and found out that people in upper blocks, nearer to the deck, were better off in comparison to mid and lower blocks (towards the bottom of ship and farther from the deck).
+
 
 ### Table of Contents
 
